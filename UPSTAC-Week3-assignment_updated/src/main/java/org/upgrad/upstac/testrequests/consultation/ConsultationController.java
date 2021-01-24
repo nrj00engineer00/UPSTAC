@@ -48,6 +48,7 @@ public class ConsultationController {
 
 
 
+
     @GetMapping("/in-queue")
     @PreAuthorize("hasAnyRole('DOCTOR')")
     public List<TestRequest> getForConsultations()  {

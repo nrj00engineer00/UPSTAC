@@ -37,9 +37,9 @@ public class ConsultationService {
 
     }
 
-    public Consultation updateConsultation(TestRequest testRequest , CreateConsultationRequest createConsultationRequest) {
+    public Consultation updateConsultation(TestRequest testRequest1 , CreateConsultationRequest createConsultationRequest) {
 
-            Consultation consultation1 = consultationRepository.findByDoctorAndRequest(userLoggedInService.getLoggedInUser(),testRequest).orElseThrow(()-> new AppException("Invalid Rrequest"));
+            Consultation consultation1 = consultationRepository.findByRequest(testRequest1).orElseThrow(()-> new AppException("Invalid Rrequest"));
 
 
         consultation1.setSuggestion(createConsultationRequest.getSuggestion());
